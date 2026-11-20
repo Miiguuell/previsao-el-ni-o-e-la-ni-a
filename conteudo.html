@@ -25,10 +25,10 @@
   
     <main>
         <div>
-        <p></p>
-        <p></p>
+        <br>
+        <br>
         <h3>El Niño e La Niña</h3>
-        <p></p>
+        <br>
         <section>
                 <h4>O Que São e Como Ocorrem?</h4>
                 <p>El Niño é um fênomeno climático natural causado pelo aquecimento anormal das águas superfiiais do Oceano Pacífico Tropical. Entretanto pode se tornar um Super El Niño quando a anomalia de temperaturada superfície do mar ultrapassa +2ºC em relação à média histórica. Já La Niña é seu oposto, causada pelo resfriamento anormal das águas do Pacífico, relacionado a intensificação dos ventos alísios, mas pode durar 3 anos, ocasionando tempo chuvoso no Norte e Nordeste e seca no Sul<br>
@@ -51,41 +51,65 @@
                 </div>
                 <div>
                     <h4>Modelos físicos em supercomputadores</h4>
-                    <p>Tradicionalmente, a previsão climática depende de modelos numéricos acoplados (oceano + atmosfera + superfície terrestre). Eles resolvem equações da física e da dinâmica dos fluidos — como conservação de massa, energia e momento — dividindo o planeta em milhões de células tridimensionais e avançando no tempo passo a passo.
+                    <p>Tradicionalmente, a previsão climática depende de modelos numéricos acoplados (oceano + atmosfera + superfície terrestre). Eles resolvem equações da física e da dinâmica dos fluidos, como conservação de massa, energia e momento, dividindo o planeta em milhões de células tridimensionais e avançando no tempo passo a passo.
                     Como essas equações são complexas e exigem trilhões de cálculos, elas rodam em supercomputadores.
                     Em vez de rodar uma única simulação, os centros climáticos costumam rodar conjuntos (ensembles) com pequenas variações iniciais para estimar probabilidades (por exemplo, qual a chance de um El Niño ou La Niña se formar ou persistir nos próximos trimestres).</p>
                 </div>
                 <div>
                     <h4>Como a Inteligência Artificial entra nisso?</h4>
-                    <p>A IA — especialmente redes neurais, aprendizado profundo e modelos de séries temporais — atua como um complemento poderoso aos modelos físicos:
+                    <p>A IA, especialmente redes neurais (aprendizado profundo e modelos de séries temporais), atua como um complemento poderoso aos modelos físicos:
                     Detecção de padrões ocultos: Algoritmos de aprendizado de máquina analisam décadas de dados históricos (anomalias de temperatura, ventos, calor subsuperficial) para identificar sinais precoces que nem sempre saltam aos olhos em regras simples.
                     Previsões mais rápidas e de longo alcance: Depois de treinados, modelos de IA podem gerar projeções em frações do tempo que um supercomputador levaria para simular física completa, ajudando em previsões sazonais (com vários meses de antecedência) e explorando cenários.
                     Correção de vieses e pós-processamento: Modelos físicos podem ter pequenas distorções sistemáticas (por exemplo, superestimar ou subestimar chuvas em certas regiões). A IA aprende a comparar o que o modelo previu com o que realmente aconteceu no passado e corrige parte desses erros.
                     Modelos híbridos: A tendência mais forte na ciência climática combina a consistência física das equações tradicionais com a capacidade de reconhecimento de padrões da IA.</p>
                 </div>
                 <br>
-                        <div>
+                        <div class="container">
                             <h4>Atividade - El Niño e La Niña</h4>
-                            <p>O que causa o El Niño?</p>
-                            <div class="d-flex flex-column align-items-start gap-2">
-                                <div class="d-flex align-items-center gap-2">
-                                    <input type="radio" name="grupo" id="btn1" class="form-check-input">
-                                    <label for="btn1" class="btn btn-outline-primary">Aquecimento anormal das águas do Pacífico</label>
-                                </div>
-                                <div class="d-flex align-items-center gap-2">
-                                    <input type="radio" name="grupo" id="btn2" class="form-check-input">
-                                    <label for="btn2" id="certo" class="btn btn-outline-primary">Enfraquecimento dos ventos alísios</label>
-                                </div>
-                                <div class="d-flex align-items-center gap-2">
-                                    <input type="radio" name="grupo" id="btn3" class="form-check-input">
-                                    <label for="btn3" class="btn btn-outline-primary">Esfriamento anormal das águas do Pacífico</label>
-                                </div>
-                                <div class="d-flex align-items-center gap-2">
-                                    <input type="radio" name="grupo" id="btn4" class="form-check-input">
-                                    <label for="btn4" class="btn btn-outline-primary">Formação de jazidas</label>
+
+                            <div class="pergunta mb-4">
+                                <p>O que causa o El Niño?</p>
+                                <div class="d-flex flex-column align-items-start gap-2">
+                                    <button type="button" class="btn btn-outline-primary opcao">Aquecimento anormal das águas do Pacífico</button>
+                                    <button type="button" class="btn btn-outline-primary opcao" data-certo="true">Enfraquecimento dos ventos alísios</button>
+                                    <button type="button" class="btn btn-outline-primary opcao">Esfriamento anormal das águas do Pacífico</button>
+                                    <button type="button" class="btn btn-outline-primary opcao">Formação de jazidas</button>
                                 </div>
                             </div>
-                            <button type="button" id="responder" class="btn btn-primary mt-3" disabled>Responder</button>
+
+                            <div class="pergunta mb-4">
+                                <p>Quando o El Niño pode ser chamado de Super El Niño?</p>
+                                <div class="d-flex flex-column align-items-start gap-2">
+                                    <button type="button" class="btn btn-outline-primary opcao">Quando dura menos de um mês</button>
+                                    <button type="button" class="btn btn-outline-primary opcao">Quando ocorre somente no Oceano Atlântico</button>
+                                    <button type="button" class="btn btn-outline-primary opcao" data-certo="true">Quando a anomalia de temperatura da superfície do mar ultrapassa +2ºC</button>
+                                    <button type="button" class="btn btn-outline-primary opcao">Quando os ventos alísios se intensificam</button>
+                                </div>
+                            </div>
+
+                            <div class="pergunta mb-4">
+                                <p>O que causa a La Niña?</p>
+                                <div class="d-flex flex-column align-items-start gap-2">
+                                    <button type="button" class="btn btn-outline-primary opcao">Aquecimento anormal das águas do Pacífico</button>
+                                    <button type="button" class="btn btn-outline-primary opcao">Enfraquecimento dos ventos alísios</button>
+                                    <button type="button" class="btn btn-outline-primary opcao">Erupções vulcânicas no Atlântico</button>
+                                    <button type="button" class="btn btn-outline-primary opcao" data-certo="true">Resfriamento anormal das águas do Pacífico</button>
+                                </div>
+                            </div>
+
+                            <div class="pergunta mb-4">
+                                <p>Onde ocorrem o El Niño e a La Niña?</p>
+                                <div class="d-flex flex-column align-items-start gap-2">
+                                    <button type="button" class="btn btn-outline-primary opcao" data-certo="true">Na região equatorial do Oceano Pacífico</button>
+                                    <button type="button" class="btn btn-outline-primary opcao">No Polo Norte</button>
+                                    <button type="button" class="btn btn-outline-primary opcao">No Mar Mediterrâneo</button>
+                                    <button type="button" class="btn btn-outline-primary opcao">No Oceano Atlântico Sul</button>
+                                </div>
+                            </div>
+                            <br>
+                            
+                            <button type="button" id="responder" class="btn btn-primary" disabled>Responder</button>
+                            <p id="resultado" class="mt-3"></p>
                         </div>
         </section>
     </main>
