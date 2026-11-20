@@ -1,61 +1,74 @@
-const opcoes = document.querySelectorAll('label.btn');
-const radios = document.querySelectorAll('input[name="grupo"]');
-const certo = document.querySelector('#certo');
+//declaração de variáveis
+const perguntas = document.querySelectorAll('.pergunta');
+const opcoes = document.querySelectorAll('.opcao');
 const responder = document.querySelector('#responder');
+const resultado = document.querySelector('#resultado');
 let respondido = false;
 
+//o botão "Responder" pode ser clicado quando todas as perguntas tiverem tido uma opção marcada
+function atualizarBotao() {
+    const todas = [...perguntas].every(p => p.querySelector('.opcao.active'));
+    responder.disabled = !todas;
+}
+
+//aplica a todas as opções
 opcoes.forEach(op => {
+
+    //botão cresce quando o mouse passa por cima
     op.addEventListener('mouseenter', () => {
         if (respondido) return;
         op.style.transform = 'scale(1.05)';
         op.style.boxShadow = '0 8px 15px rgba(0, 0, 0, 0.2)';
     });
 
+    //botão diminui quando o mouse sai de cima
     op.addEventListener('mouseleave', () => {
         if (respondido) return;
         op.style.transform = 'scale(1)';
         op.style.boxShadow = '0 8px 10px rgba(0, 0, 0, 0.1)';
     });
-});
 
-radios.forEach(radio => {
-    radio.addEventListener('change', () => {
+    //botão ativa quando clicado e não permite dois botões marcados em uma questão
+    op.addEventListener('click', () => {
         if (respondido) return;
-        opcoes.forEach(op => op.classList.remove('active'));
-        document.querySelector(`label[for="${radio.id}"]`).classList.add('active');
-        responder.disabled = false;
+        const pergunta = op.closest('.pergunta');
+        pergunta.querySelectorAll('.opcao').forEach(o => o.classList.remove('active'));
+        op.classList.add('active');
+        atualizarBotao();
     });
 });
 
+//percebe se o botão "Responder" foi clicado
 responder.addEventListener('click', () => {
-    if (respondido) return;
-
-    const marcado = document.querySelector('input[name="grupo"]:checked');
-    if (!marcado) return;
-
+    if (respondido || responder.disabled) return;
     respondido = true;
 
-    const escolhida = document.querySelector(`label[for="${marcado.id}"]`);
+    //marca os acertos
+    let acertos = 0;
 
-    escolhida.classList.remove('active');
-    if (escolhida === certo) {
-        escolhida.innerText = 'Resposta correta';
-        escolhida.style.backgroundColor = 'green';
+    //aplica a todas questões
+    perguntas.forEach(p => {
+        const escolhida = p.querySelector('.opcao.active');
+        escolhida.classList.remove('active');
 
-    } else {
-
-        escolhida.innerText = 'Resposta incorreta';
-        escolhida.style.backgroundColor = 'red';
-    }
-    escolhida.style.color = 'white';
-    escolhida.style.borderColor = escolhida.style.backgroundColor;
-
-    opcoes.forEach(op => {
-        op.style.pointerEvents = 'none';
-        op.style.transform = 'scale(1)';
+        //tira a cor do botão desselecionado, acumula os acertos e diz se a resposta está certa, acerto = botão verde, erro = botão vermelho
+        if (escolhida.dataset.certo === 'true') {
+            acertos++;
+            escolhida.innerText = 'Resposta correta';
+            escolhida.style.backgroundColor = 'green';
+        } else {
+            escolhida.innerText = 'Resposta incorreta';
+            escolhida.style.backgroundColor = 'red';
+        }
+        escolhida.style.color = 'white';
+        escolhida.style.borderColor = escolhida.style.backgroundColor;
     });
-    
-    radios.forEach(r => r.disabled = true);
-    responder.disabled = true;
 
+    //desativa o botão "Responder" e escreve quantas do total foram certas
+    opcoes.forEach(op => {
+        op.style.transform = 'scale(1)';
+        op.style.pointerEvents = 'none';
+    });
+    responder.disabled = true;
+    resultado.innerText = `Você acertou ${acertos} de ${perguntas.length} perguntas.`;
 });
