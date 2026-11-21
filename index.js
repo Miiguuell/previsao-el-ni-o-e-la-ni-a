@@ -4,16 +4,15 @@ const links = document.querySelectorAll('nav a');
 links.forEach(link => {
     
     link.addEventListener('mouseenter', () => {
-        link.style.backgroundColor = '#abf0cd'; 
+        link.style.backgroundColor = '#D6E264'; 
         link.style.borderRadius = '50px';      
         link.style.padding = '8px 16px';       
         link.style.transition = 'background-color 0.5s';
     });
 
     link.addEventListener('mouseleave', () => {
-        link.style.backgroundColor = 'transparent';
-        link.style.borderRadius = '0';              
-        link.style.padding = '0';              
+        link.style.backgroundColor = '#8AD6D6';
+                 
     });
 });
 
@@ -26,6 +25,7 @@ links.forEach(link => {
  titus.innerText= 'Previsões de El Niño e La Niña'
  texinicio.insertBefore(titus, containerC);
  const resumDiv = document.createElement('div');
+ resumDiv.classList.add('cardmain');
  const resDivPara = document.createElement('p');
  resDivPara.innerText = 'Esse site foi feito com o propósito de informar sobre o que são  El Niño e La Niña, e algumas outras perguntas como: por que ocorrem, onde ocorre, quais são as diferenças entres eles. Não só isso, como também  dizer como são previdos e como funciona o sistema de previsão.';
  resumDiv.appendChild(resDivPara);
