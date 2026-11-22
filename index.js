@@ -10,7 +10,7 @@ const numeros = [
     },
     {
         valor: '+2,5 °C',
-        texto: 'Em novembro de 2026, o índice Niño-3.4 chegou a +2,5 °C, segundo a NOAA. A chance de um El Niño forte a muito forte até março de 2027 é maior que 79%.'
+        texto: 'A chance de um El Niño forte a muito forte até fevereiro de 2027 é maior que 96%.'
     }
 ];
 
