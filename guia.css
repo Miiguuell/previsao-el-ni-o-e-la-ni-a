@@ -1,264 +1,188 @@
-
-/* ---------- Estrutura da página ---------- */
 .g-guia {
-    max-width: 960px;
+    max-width: 900px;
     margin: 0 auto;
-    padding: 30px 20px 60px;
+    padding: 20px 20px 60px;
     text-align: left;
 }
 
-.g-intro {
-    font-size: large;
-    max-width: 70ch;
-    line-height: 1.5;
-}
-
 .g-secao {
-    margin-top: 50px;
+    margin-top: 56px;
 }
 
-/* Título de cada seção, com a borda na cor da identidade */
 .g-secao > h3 {
-    margin-top: 0;
+    margin: 0 0 10px;
     padding-bottom: 8px;
     border-bottom: 3px solid var(--borda);
 }
 
 .g-secao p,
 .g-secao li {
-    max-width: 70ch;
-    line-height: 1.5;
+    max-width: 65ch;
+    line-height: 1.6;
 }
 
-/* ---------- Índice (menu interno) ---------- */
-.g-indice {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
+.g-hero {
+    padding-top: 30px;
+}
+
+.g-etiqueta {
+    margin: 0 0 12px;
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--texto-2);
+}
+
+.g-hero h2 {
+    margin: 0 0 16px;
+    font-size: clamp(2.2rem, 6vw, 3.4rem);
+    line-height: 1.1;
+}
+
+.g-lead {
+    max-width: 55ch;
+    margin: 0 0 24px;
+    font-size: 1.15rem;
+    line-height: 1.6;
+}
+
+
+.g-botao,
+.g-voltar {
+    display: inline-block;
+    padding: 12px 26px;
+    border-radius: 50px;
+    background-color: var(--texto-2);
+    color: #ffffff;
+    font-family: var(--fonte-texto);
+    text-decoration: none;
+    transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+.g-botao:hover,
+.g-voltar:hover {
+    background-color: var(--destaque);
+    color: var(--texto);
+}
+
+.g-botao:focus-visible,
+.g-voltar:focus-visible {
+    outline: 3px solid var(--texto);
+    outline-offset: 3px;
+}
+
+.g-hero-img {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-top: 36px;
+    border-radius: 12px;
+    border: 3px solid var(--borda);
+    box-sizing: border-box;
+}
+
+.g-cores {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 14px;
     padding: 0;
     margin: 20px 0 0;
     list-style: none;
 }
 
-/* "nav a" do style.css coloca margin-left: 50px; aqui zeramos */
-.g-indice a {
-    margin-left: 0;
+.g-cores li {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    font-size: 0.9rem;
 }
 
-/* ---------- Amostras de cor ---------- */
-.g-cores {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 16px;
-    padding: 0;
-    margin: 0 0 10px;
-    list-style: none;
-}
-
-.g-cor {
-    border: 1px solid #c9d3d3;
-    border-radius: 12px;
-    overflow: hidden;
-    background-color: #ffffff;
-}
-
-/* A cor vem da variável --amostra, definida no style="" de cada item */
 .g-amostra {
-    height: 72px;
-    background-color: var(--amostra);
-    border-bottom: 1px solid #c9d3d3;
-}
-
-.g-cor-info {
-    padding: 10px 12px;
-}
-
-.g-cor-info strong,
-.g-cor-info code,
-.g-cor-info span {
-    display: block;
-}
-
-.g-cor-info span {
-    margin-top: 4px;
-    font-size: 0.9rem;
-}
-
-/* ---------- Tabelas ---------- */
-.g-rolagem {
-    overflow-x: auto; /* a tabela rola dentro da caixa no celular */
-}
-
-.g-tabela {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-.g-tabela caption {
-    padding: 8px 0;
-    text-align: left;
-    font-weight: bold;
-}
-
-.g-tabela th,
-.g-tabela td {
-    padding: 8px 12px;
-    text-align: left;
-    vertical-align: top;
-    border-bottom: 1px solid var(--borda);
-}
-
-.g-tabela th {
-    background-color: var(--card);
-}
-
-/* ---------- Blocos de código ---------- */
-.g-codigo {
-    max-width: 100%;
-    overflow-x: auto;
-    padding: 14px 16px;
-    border-radius: 8px;
-    background-color: var(--card);
-    border: 1px solid var(--borda);
-    font-size: 0.9rem;
-    line-height: 1.5;
-}
-
-/* ---------- Tipografia ---------- */
-.g-fonte-titulo {
-    font-family: var(--fonte-titulo);
-}
-
-.g-fonte-texto {
-    font-family: var(--fonte-texto);
-}
-
-.g-hierarquia {
-    padding: 10px 20px 20px;
-    border: 1px solid var(--borda);
+    height: 64px;
+    margin-bottom: 6px;
     border-radius: 12px;
-    background-color: var(--card);
+    border: 1px solid #c9d3d3;
+    background-color: var(--amostra);
 }
 
-/* ---------- Área de demonstração dos componentes ---------- */
-.g-demo {
+.g-fontes {
     display: flex;
     flex-wrap: wrap;
-    align-items: flex-start;
-    gap: 20px;
-    padding: 20px;
-    border: 1px dashed var(--borda);
-    border-radius: 12px;
+    gap: 40px;
+    margin-top: 16px;
 }
 
-/* O .cardmain real ocupa a largura da área de demonstração */
-.g-demo .cardmain {
-    width: 100%;
+.g-fontes p {
     margin: 0;
 }
 
-.g-demo .cardmain > section {
-    width: 100%;
+.g-fonte-grande {
+    font-size: 2.4rem;
+    line-height: 1.2;
 }
 
-/* Amostras do menu em formato de pílula (mesmo visual do "nav a") */
-.g-pilula {
+.g-fonte-titulo { font-family: var(--fonte-titulo); }
+.g-fonte-texto { font-family: var(--fonte-texto); }
+
+.g-componentes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 24px;
+    margin-top: 20px;
+}
+
+.g-componentes p {
+    margin: 10px 0 0;
+    font-size: 0.95rem;
+}
+
+.g-pilula,
+.g-cartao,
+.g-resposta {
     display: inline-block;
-    padding: 8px 15px;
-    border-radius: 50px;
+    font-family: var(--fonte-texto);
     color: #000000;
+}
+
+.g-pilula {
+    padding: 8px 18px;
+    border-radius: 50px;
     background-color: var(--borda);
 }
 
-.g-pilula-hover {
-    padding: 8px 16px;
-    background-color: var(--destaque);
+.g-cartao {
+    padding: 12px 20px;
+    border-radius: 12px;
+    border: 3px solid var(--borda);
+    background-color: var(--card);
+    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Botões de resposta do quiz: lista vertical, como em conteudo.html */
-.g-opcoes {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
-    width: 100%;
-}
-
-/* Estados que o conteudo.js aplica depois de responder */
-.g-certo,
-.g-certo:hover {
-    color: #ffffff;
+.g-resposta {
+    padding: 8px 18px;
+    border-radius: 8px;
     background-color: green;
-    border-color: green;
-}
-
-.g-errado,
-.g-errado:hover {
     color: #ffffff;
-    background-color: red;
-    border-color: red;
 }
 
-/* ---------- Barras do gráfico (mesmo visual do grafico.js) ---------- */
-.g-grafico {
-    width: 100%;
-    max-width: 520px;
+.g-lista {
+    padding-left: 22px;
+    margin: 12px 0 28px;
 }
 
-.g-barra {
-    height: 22px;
-    margin-bottom: 8px;
-    border-radius: 4px;
-    background-color: #eeeeee;
-    overflow: hidden;
-}
-
-/* Largura e cor vêm de --largura e --cor-barra, definidas no HTML */
-.g-barra > span {
-    display: block;
-    width: var(--largura);
-    height: 100%;
-    border-radius: 4px;
-    background-color: var(--cor-barra);
-}
-
-.g-legenda {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 16px;
-    padding: 0;
-    margin: 0 0 10px;
-    list-style: none;
-    font-size: 0.9rem;
-}
-
-.g-legenda li::before {
-    content: "";
-    display: inline-block;
-    width: 12px;
-    height: 12px;
-    margin-right: 6px;
-    border-radius: 3px;
-    background-color: var(--cor-barra);
+.g-lista li {
+    margin-bottom: 10px;
 }
 
 /* ---------- Celular ---------- */
 @media (max-width: 768px) {
     .g-guia {
-        padding: 20px 14px 40px;
+        padding: 10px 14px 40px;
     }
 
-    .g-indice {
-        flex-direction: column;
-        align-items: stretch;
-    }
-
-    .g-indice a {
+    /* o style.css deixa imagens com 100% de largura no celular; o botão fica inteiro */
+    .g-botao {
         display: block;
         text-align: center;
-    }
-
-    .g-cores {
-        grid-template-columns: 1fr 1fr;
     }
 }

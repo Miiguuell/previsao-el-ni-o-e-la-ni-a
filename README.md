@@ -8,7 +8,7 @@ Site informativo sobre os fenômenos climáticos **El Niño** e **La Niña**: o 
 
 | Página | Arquivo | O que tem |
 |---|---|---|
-| Início | `index.html` | Resumo do projeto e três cartões de destaque com dados sobre o El Niño (2,6 °C, 2023-2024 e 96%). |
+| Início | `index.html` | Abertura com título, botão e foto, motivo do projeto, três números sobre o El Niño e links para as outras páginas. |
 | El Niño e La Niña | `conteudo.html` | Texto explicativo (o que são, onde ocorrem, como é feita a previsão, papel da inteligência artificial) e um quiz com 4 perguntas. |
 | Equipe | `equipe.html` | Cartões com foto, função e contribuição de cada integrante. |
 | Gráfico | `grafico.html` | Dois gráficos de barras: anomalias de temperatura da superfície do mar e impacto na chuva por região do Brasil. |
@@ -16,7 +16,7 @@ Site informativo sobre os fenômenos climáticos **El Niño** e **La Niña**: o 
 
 ## Funcionalidades em JavaScript
 
-- **`index.js`**: monta o resumo e os cartões da página inicial, aplica o zoom dos cartões ao passar o mouse e o destaque dos links do menu.
+- **`index.js`**: monta os três cartões de números da página inicial a partir de uma lista.
 - **`conteudo.js`**: controla o quiz. Só deixa marcar uma opção por pergunta, libera o botão *Responder* quando todas foram respondidas, pinta as respostas de verde ou vermelho e mostra o total de acertos.
 - **`equipe.js`**: cria os cartões da equipe a partir do código, com `createElement` e `appendChild`.
 - **`grafico.js`**: desenha os gráficos de barras sem biblioteca externa, usando arrays de objetos, laços `forEach` e cálculo da largura de cada barra.
