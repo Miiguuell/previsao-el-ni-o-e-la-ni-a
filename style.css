@@ -36,8 +36,14 @@ header {
     box-sizing: border-box;
 }
 
+H1, H2, H3, H4
+{
+  font-family: var(--fonte-titulo);
+}
+
 header h1 
 {
+    font-family: var(--fonte-titulo);
     color: #3551A4;
     white-space: nowrap;
     margin: 0;
@@ -85,6 +91,11 @@ footer {
     margin-bottom: 8px;
 }
 
+p
+{
+  font-family: var(--fonte-texto);
+  color: var(--texto);
+}
 
 .card {
     border-radius: 12px;
