@@ -3,16 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Previsão de Fenômenos Climático</title>
+    <title>Guia de estilo - Es el Clima</title>
+
+    <!-- Fonte do texto (Poppins), usada nas amostras de tipografia -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- Estilo geral do site + estilo só desta página (carregado depois) -->
     <link rel="stylesheet" href="style.css">
-     <script src="index.js" defer></script>
-     <link href="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-B/GM4XqrwHnWXNOWMbloTmrYXZg10cakYGmpfsR/bbzQ6JAJI4ihuyADKLnBgrCe" crossorigin="anonymous">
-<script type="module" src="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-1a/pXj49ZQ1aHEmrJ+gMw1otqoVsYwlEnlD8mIfY2TV03r20Y0CN7uqx1tQogjPL" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="guia.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-B/GM4XqrwHnWXNOWMbloTmrYXZg10cakYGmpfsR/bbzQ6JAJI4ihuyADKLnBgrCe" crossorigin="anonymous">
+    <script type="module" src="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-1a/pXj49ZQ1aHEmrJ+gMw1otqoVsYwlEnlD8mIfY2TV03r20Y0CN7uqx1tQogjPL" crossorigin="anonymous"></script>
 </head>
 <body>
-    <header >
+    <header>
         <h1>Es el Clima</h1>
-        <nav >
+        <nav>
             <ul>
                 <a href="index.html">Inicio</a>
                 <a href="conteudo.html">El Niño e La Niña</a>
@@ -22,27 +30,416 @@
             </ul>
         </nav>
     </header>
-    <main>
-        <section>
-  
+
+    <main class="g-guia">
+        <h2>Guia de estilo</h2>
+        <p class="g-intro">
+            Este guia reúne as decisões visuais do site <strong>Es el Clima</strong>:
+            cores, tipografia, espaçamentos, componentes, responsividade e acessibilidade.
+            Todas as páginas usam o mesmo arquivo <code>style.css</code>, e as cores e fontes
+            principais ficam guardadas em variáveis CSS no <code>:root</code>.
+        </p>
+
+        <!-- Índice: links internos para cada seção -->
+        <nav aria-label="Seções deste guia">
+            <ul class="g-indice">
+                <li><a href="#cores">Cores</a></li>
+                <li><a href="#tipografia">Tipografia</a></li>
+                <li><a href="#espacamento">Espaçamento e formas</a></li>
+                <li><a href="#componentes">Componentes</a></li>
+                <li><a href="#responsividade">Responsividade</a></li>
+                <li><a href="#acessibilidade">Acessibilidade</a></li>
+            </ul>
+        </nav>
+
+        <!-- ===================== CORES ===================== -->
+        <section class="g-secao" id="cores" aria-labelledby="t-cores">
+            <h3 id="t-cores">Cores</h3>
+            <p>
+                A paleta usa azuis e verde-água, combinando com o tema do site (oceano e clima),
+                e um amarelo-limão de destaque. Os valores são os mesmos do <code>style.css</code>.
+            </p>
+
+<pre class="g-codigo"><code>:root {
+    --fundo: #FFFFFF;
+    --card: #EEF9F9;
+    --texto: #132442;
+    --texto-2: #3551A4;
+    --link: #3551A4;
+    --borda: #8AD6D6;
+    --destaque: #D6E264;
+    --hover: #132442;
+}</code></pre>
+
+            <h4>Cores da interface</h4>
+            <ul class="g-cores">
+                <li class="g-cor">
+                    <div class="g-amostra" style="--amostra: #FFFFFF;"></div>
+                    <div class="g-cor-info">
+                        <strong>Fundo</strong>
+                        <code>--fundo · #FFFFFF</code>
+                        <span>Fundo das páginas (<code>main</code>).</span>
+                    </div>
+                </li>
+                <li class="g-cor">
+                    <div class="g-amostra" style="--amostra: #EEF9F9;"></div>
+                    <div class="g-cor-info">
+                        <strong>Cartão</strong>
+                        <code>--card · #EEF9F9</code>
+                        <span>Fundo dos cartões principais (<code>.cardmain</code>).</span>
+                    </div>
+                </li>
+                <li class="g-cor">
+                    <div class="g-amostra" style="--amostra: #8AD6D6;"></div>
+                    <div class="g-cor-info">
+                        <strong>Borda</strong>
+                        <code>--borda · #8AD6D6</code>
+                        <span>Borda dos cartões e fundo dos botões do menu.</span>
+                    </div>
+                </li>
+                <li class="g-cor">
+                    <div class="g-amostra" style="--amostra: #D6E264;"></div>
+                    <div class="g-cor-info">
+                        <strong>Destaque</strong>
+                        <code>--destaque · #D6E264</code>
+                        <span>Link do menu ao passar o mouse.</span>
+                    </div>
+                </li>
+                <li class="g-cor">
+                    <div class="g-amostra" style="--amostra: #132442;"></div>
+                    <div class="g-cor-info">
+                        <strong>Texto</strong>
+                        <code>--texto · #132442</code>
+                        <span>Texto principal e contorno de foco do teclado (<code>--hover</code>).</span>
+                    </div>
+                </li>
+                <li class="g-cor">
+                    <div class="g-amostra" style="--amostra: #3551A4;"></div>
+                    <div class="g-cor-info">
+                        <strong>Texto secundário e link</strong>
+                        <code>--texto-2 e --link · #3551A4</code>
+                        <span>Links e textos de apoio.</span>
+                    </div>
+                </li>
+                <li class="g-cor">
+                    <div class="g-amostra" style="--amostra: #80A1F8;"></div>
+                    <div class="g-cor-info">
+                        <strong>Cabeçalho e rodapé</strong>
+                        <code>#80A1F8</code>
+                        <span>Faixa azul no topo e no fim de todas as páginas.</span>
+                    </div>
+                </li>
+            </ul>
+
+            <h4>Cores dos gráficos</h4>
+            <ul class="g-cores">
+                <li class="g-cor">
+                    <div class="g-amostra" style="--amostra: #ff4d4d;"></div>
+                    <div class="g-cor-info">
+                        <strong>El Niño</strong>
+                        <code>#ff4d4d</code>
+                        <span>Aquecimento da água (vermelho).</span>
+                    </div>
+                </li>
+                <li class="g-cor">
+                    <div class="g-amostra" style="--amostra: #3399ff;"></div>
+                    <div class="g-cor-info">
+                        <strong>La Niña</strong>
+                        <code>#3399ff</code>
+                        <span>Resfriamento da água (azul).</span>
+                    </div>
+                </li>
+            </ul>
+
+            <h4>Cores de retorno do quiz</h4>
+            <ul class="g-cores">
+                <li class="g-cor">
+                    <div class="g-amostra" style="--amostra: green;"></div>
+                    <div class="g-cor-info">
+                        <strong>Resposta correta</strong>
+                        <code>green · #008000</code>
+                        <span>Botão com texto branco.</span>
+                    </div>
+                </li>
+                <li class="g-cor">
+                    <div class="g-amostra" style="--amostra: red;"></div>
+                    <div class="g-cor-info">
+                        <strong>Resposta incorreta</strong>
+                        <code>red · #FF0000</code>
+                        <span>Botão com texto branco.</span>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+        <!-- ===================== TIPOGRAFIA ===================== -->
+        <section class="g-secao" id="tipografia" aria-labelledby="t-tipografia">
+            <h3 id="t-tipografia">Tipografia</h3>
+            <p>
+                São duas famílias com funções diferentes: uma fonte de impacto para os títulos
+                e uma fonte limpa para os textos. Cada uma tem uma fonte reserva caso a principal
+                não carregue.
+            </p>
+
+            <div class="g-rolagem">
+                <table class="g-tabela">
+                    <caption>Famílias de fonte</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Função</th>
+                            <th scope="col">Variável</th>
+                            <th scope="col">Fonte</th>
+                            <th scope="col">Reservas</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Títulos</td>
+                            <td><code>--fonte-titulo</code></td>
+                            <td class="g-fonte-titulo">Nofex</td>
+                            <td>Impact, Arial Black, sans-serif</td>
+                        </tr>
+                        <tr>
+                            <td>Textos</td>
+                            <td><code>--fonte-texto</code></td>
+                            <td class="g-fonte-texto">Poppins</td>
+                            <td>system-ui, sans-serif</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h4>Hierarquia dos títulos</h4>
+            <div class="g-hierarquia">
+                <h2 class="g-fonte-titulo">Título da página (h2)</h2>
+                <h3 class="g-fonte-titulo">Título de cartão (h3)</h3>
+                <h4 class="g-fonte-titulo">Subtítulo de seção (h4)</h4>
+                <p class="g-fonte-texto">
+                    Texto corrido (p). Nos cartões o texto usa tamanho <code>large</code>
+                    e fica alinhado à esquerda, para facilitar a leitura.
+                </p>
+            </div>
+            <p>
+                O nome do site (<code>h1</code>) fica no cabeçalho de todas as páginas, e os títulos
+                seguintes descem um nível por vez (<code>h2</code>, <code>h3</code>, <code>h4</code>),
+                sem pular de número.
+            </p>
+        </section>
+
+        <!-- ===================== ESPAÇAMENTO E FORMAS ===================== -->
+        <section class="g-secao" id="espacamento" aria-labelledby="t-espacamento">
+            <h3 id="t-espacamento">Espaçamento e formas</h3>
+
+            <div class="g-rolagem">
+                <table class="g-tabela">
+                    <caption>Valores usados no CSS</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Item</th>
+                            <th scope="col">Valor</th>
+                            <th scope="col">Onde</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Cantos arredondados</td>
+                            <td>12 px</td>
+                            <td>Cartões (<code>.cardmain</code> e <code>.card</code>)</td>
+                        </tr>
+                        <tr>
+                            <td>Cantos arredondados</td>
+                            <td>8 px</td>
+                            <td>Botões de resposta do quiz</td>
+                        </tr>
+                        <tr>
+                            <td>Cantos arredondados</td>
+                            <td>50 px (pílula)</td>
+                            <td>Links do menu e do rodapé</td>
+                        </tr>
+                        <tr>
+                            <td>Sombra</td>
+                            <td><code>0 8px 10px rgba(0, 0, 0, 0.1)</code></td>
+                            <td>Cartões; ao passar o mouse a sombra fica mais forte (0.2)</td>
+                        </tr>
+                        <tr>
+                            <td>Espaço interno</td>
+                            <td>15 px a 25 px</td>
+                            <td>Cartões; cabeçalho usa 15 px 30 px</td>
+                        </tr>
+                        <tr>
+                            <td>Espaço entre cartões</td>
+                            <td>20 px</td>
+                            <td>Propriedade <code>gap</code> dos containers</td>
+                        </tr>
+                        <tr>
+                            <td>Animação</td>
+                            <td>0,5 s (menu) e 0,9 s (cartões)</td>
+                            <td><code>transition</code> suave, sem movimento automático</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- ===================== COMPONENTES ===================== -->
+        <section class="g-secao" id="componentes" aria-labelledby="t-componentes">
+            <h3 id="t-componentes">Componentes</h3>
+
+            <h4>Menu</h4>
+            <p>
+                Links em formato de pílula, com fundo <code>--borda</code>. Ao passar o mouse
+                o fundo muda para <code>--destaque</code>. No celular os links ficam empilhados.
+            </p>
+            <div class="g-demo">
+                <span class="g-pilula">Normal</span>
+                <span class="g-pilula g-pilula-hover">Mouse em cima</span>
+            </div>
+
+            <h4>Cartão principal (.cardmain)</h4>
+            <p>
+                Caixa para os textos de cada página: fundo <code>--card</code>, borda sólida
+                <code>--borda</code>, cantos de 12 px e sombra leve.
+            </p>
+            <div class="g-demo">
+                <div class="cardmain">
+                    <section>
+                        <h3>Título do cartão</h3>
+                        <p>
+                            Exemplo de cartão com título e texto. É o mesmo componente usado em
+                            El Niño e La Niña, Equipe e na página inicial.
+                        </p>
+                    </section>
+                </div>
+            </div>
+
+            <h4>Cartão de destaque (.card)</h4>
+            <p>
+                Cartão branco de 250 px usado na página inicial para números importantes.
+                Ao passar o mouse ele cresce e ganha sombra mais forte; no celular o efeito
+                é desligado.
+            </p>
+            <div class="g-demo">
+                <div class="card">
+                    <h2>96%</h2>
+                    <p>Probabilidade de o episódio persistir entre dezembro de 2026 e fevereiro de 2027, segundo a NOAA.</p>
+                </div>
+            </div>
+
+            <h4>Botões de resposta do quiz (.opcao)</h4>
+            <p>
+                Botões do Bootstrap (<code>btn-outline-primary</code>) com cantos de 8 px.
+                Cada pergunta aceita só uma opção marcada, e o botão Responder só é liberado
+                quando todas foram respondidas.
+            </p>
+            <div class="g-demo">
+                <div class="g-opcoes">
+                    <button type="button" class="btn btn-outline-primary opcao">Normal</button>
+                    <button type="button" class="btn btn-outline-primary opcao active">Selecionado</button>
+                    <button type="button" class="btn btn-outline-primary opcao g-certo">Resposta correta</button>
+                    <button type="button" class="btn btn-outline-primary opcao g-errado">Resposta incorreta</button>
+                </div>
+            </div>
+
+            <h4>Barras do gráfico</h4>
+            <p>
+                Os gráficos são barras horizontais feitas só com JS. O valor também aparece
+                em texto, então a informação não depende só da cor.
+            </p>
+            <div class="g-demo">
+                <div class="g-grafico">
+                    <ul class="g-legenda">
+                        <li style="--cor-barra: #ff4d4d;">El Niño: +2,6 °C</li>
+                        <li style="--cor-barra: #3399ff;">La Niña: -1,6 °C</li>
+                    </ul>
+                    <div class="g-barra" role="img" aria-label="El Niño em julho: mais 2,6 graus Celsius">
+                        <span style="--largura: 87%; --cor-barra: #ff4d4d;"></span>
+                    </div>
+                    <div class="g-barra" role="img" aria-label="La Niña em julho: menos 1,6 grau Celsius">
+                        <span style="--largura: 53%; --cor-barra: #3399ff;"></span>
+                    </div>
+                </div>
+            </div>
+
+            <h4>Rodapé</h4>
+            <p>
+                Faixa azul <code>#80A1F8</code> com os links das fontes de pesquisa, o
+                texto de direitos autorais e o QR Code do site. No celular tudo fica
+                empilhado e centralizado.
+            </p>
+        </section>
+
+        <!-- ===================== RESPONSIVIDADE ===================== -->
+        <section class="g-secao" id="responsividade" aria-labelledby="t-responsividade">
+            <h3 id="t-responsividade">Responsividade</h3>
+            <p>
+                O site tem um ponto de quebra em <strong>768 px</strong> (<code>@media (max-width: 768px)</code>).
+                Abaixo dele:
+            </p>
+            <ul>
+                <li>O cabeçalho vira uma coluna e os links do menu ficam empilhados, todos com a mesma largura.</li>
+                <li>Os cartões passam a ocupar 90% da largura (máximo de 340 px) e crescem conforme o texto, sem cortar.</li>
+                <li>As imagens ficam com largura de 100% e altura automática, sem distorcer.</li>
+                <li>O rodapé empilha os links e os textos, e o QR Code fica com 120 px.</li>
+                <li>O efeito de zoom dos cartões é desativado.</li>
+            </ul>
+        </section>
+
+        <!-- ===================== ACESSIBILIDADE ===================== -->
+        <section class="g-secao" id="acessibilidade" aria-labelledby="t-acessibilidade">
+            <h3 id="t-acessibilidade">Acessibilidade</h3>
+            <p>
+                As combinações de cor abaixo foram escolhidas para manter o texto legível.
+                A meta é pelo menos 4,5:1 (nível AA) para texto comum.
+            </p>
+
+            <div class="g-rolagem">
+                <table class="g-tabela">
+                    <caption>Contraste entre texto e fundo</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Texto</th>
+                            <th scope="col">Fundo</th>
+                            <th scope="col">Contraste</th>
+                            <th scope="col">Nível</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><code>--texto</code> #132442</td><td><code>--fundo</code> #FFFFFF</td><td>15,5:1</td><td>AAA</td></tr>
+                        <tr><td><code>--texto</code> #132442</td><td><code>--card</code> #EEF9F9</td><td>14,4:1</td><td>AAA</td></tr>
+                        <tr><td><code>--link</code> #3551A4</td><td><code>--fundo</code> #FFFFFF</td><td>7,3:1</td><td>AAA</td></tr>
+                        <tr><td><code>--link</code> #3551A4</td><td><code>--card</code> #EEF9F9</td><td>6,8:1</td><td>AA</td></tr>
+                        <tr><td>Preto</td><td><code>--borda</code> #8AD6D6 (menu)</td><td>12,7:1</td><td>AAA</td></tr>
+                        <tr><td>Branco</td><td>Verde #008000 (quiz)</td><td>5,1:1</td><td>AA</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h4>Outras práticas do projeto</h4>
+            <ul>
+                <li>Idioma da página declarado com <code>lang="pt-BR"</code>.</li>
+                <li>Toda imagem tem texto alternativo (<code>alt</code>).</li>
+                <li>Menu, quiz e botões usam elementos nativos (<code>a</code> e <code>button</code>), então funcionam com o teclado.</li>
+                <li>Contorno de foco visível nos links e botões, na cor <code>--hover</code>.</li>
+                <li>O resultado do quiz é escrito em texto, não só indicado por cor.</li>
+                <li>Código HTML indentado e JavaScript comentado.</li>
+            </ul>
         </section>
     </main>
 
-
-
     <footer>
         <nav class="roda">
-         <ul>
-           <a href="https://g1.globo.com/meio-ambiente/noticia/2026/05/24/quando-foi-o-ultimo-super-el-nino.ghtml" target="_blank" rel="noopener">g1</a>
-           <a href="https://www.greenpeace.org/brasil/blog/super-el-nino-2026/?utm_source=google&utm_medium=grants&utm_campaign=clima&utm_content=grants_superelnino&utm_term=informar&utm_term=el%20ni%C3%B1o&utm_campaign=&utm_source=adwords&utm_medium=ppc&hsa_acc=7235609613&hsa_cam=19664562138&hsa_grp=154393105340&hsa_ad=810469438497&hsa_src=g&hsa_tgt=kwd-48894810&hsa_kw=el%20ni%C3%B1o&hsa_mt=b&hsa_net=adwords&hsa_ver=3&gad_source=1&gad_campaignid=19664562138&gbraid=0AAAAADzBjSPRrRPEooQmXYA5A3c2TYILI&gclid=CjwKCAiAzKvXBhBAEiwABLl9AgkcH08kbX6Fu6uRVzi5Yr_FcmUdh6voyNcCTqRJtJ-9PXe1ySLyURoCgbMQAvD_BwE" target="_blank" rel="noopener">Greenpeace</a>
-           <a href="https://www.ifrc.org/es/articulo/el-nino-que-es-y-que-significa-para-los-desastres" target="_blank" rel="noopener">IFRC</a> 
-           <a href="https://brasilescola.uol.com.br/geografia/el-nino-e-la-nina.htm#O+que+s%C3%A3o+El+Ni%C3%B1o+e+La+Ni%C3%B1a%3F" target="_blank" rel="noopener">Brasil Escola</a>
-         </ul>
-     </nav>
-     <div class="texfim">
-       <p class="textu">© 2026 - Todos os direitos reservados.</p>
-       <p class="textd">Es El clima: conteúdo geograficos</p>
-       <img src="midia\n9IXai.png" alt="qr code" width="150px" height="150px"></img>
-     </div>
+            <ul>
+                <a href="https://g1.globo.com/meio-ambiente/noticia/2026/05/24/quando-foi-o-ultimo-super-el-nino.ghtml" target="_blank" rel="noopener">g1</a>
+                <a href="https://www.greenpeace.org/brasil/blog/super-el-nino-2026/" target="_blank" rel="noopener">Greenpeace</a>
+                <a href="https://www.ifrc.org/es/articulo/el-nino-que-es-y-que-significa-para-los-desastres" target="_blank" rel="noopener">IFRC</a>
+                <a href="https://brasilescola.uol.com.br/geografia/el-nino-e-la-nina.htm" target="_blank" rel="noopener">Brasil Escola</a>
+            </ul>
+        </nav>
+        <div class="texfim">
+            <p class="textu">© 2026 - Todos os direitos reservados.</p>
+            <p class="textd">Es El clima: conteúdo geograficos</p>
+            <img src="midia/n9IXai.png" alt="QR code do site" width="150" height="150">
+        </div>
     </footer>
 </body>
+</html>
